@@ -15,7 +15,7 @@ namespace SudokuDP
 
             //DirectoryInfo uninstalldir = new DirectoryInfo(Path.Combine(Directory.GetCurrentDirectory(), "Content/Sudoku"));
             //string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"");
-            string[] files = File.ReadAllLines(xslLocation);
+            //string[] files = File.ReadAllLines(xslLocation);
             SudokuParser.GetParser().Start();
         }
     }

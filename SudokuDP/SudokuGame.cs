@@ -7,7 +7,7 @@ namespace SudokuDP
 {
     class SudokuGame
     {
-        private ISudokuBoard board;
+        public ISudokuBoard board { get; set; }
 
         public void Start()
         {

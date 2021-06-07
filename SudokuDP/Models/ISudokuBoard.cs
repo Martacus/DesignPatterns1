@@ -6,5 +6,6 @@ namespace SudokuDP.Models
 {
     interface ISudokuBoard
     {
+        public ICell[] Cells { get; set; }
     }
 }

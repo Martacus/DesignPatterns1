@@ -15,13 +15,15 @@ namespace SudokuDP.Parser
         {
             var pressedKey = Console.ReadKey();
             Console.WriteLine(pressedKey);
+            parseSudoku();
             Console.ReadLine();
         }
 
-        public ISudokuBoard parseSudoku()
+        public void parseSudoku()
         {
-            AbstractSudokuFactory factory = getFactory(FILE_NAME.Split(".")[0], SUDOKU_NINE);
-            return null;
+            AbstractSudokuFactory factory = getFactory(FILE_NAME.Split(".")[1], SUDOKU_NINE);
+            ISudokuBoard board = factory.GetSudokuBoard();
+            SudokuGame.GetGame().board = board;
         }
 
         public AbstractSudokuFactory getFactory(string fileExtension, string sudokuUnparsed)
