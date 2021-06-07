@@ -14,7 +14,9 @@ namespace SudokuDP.Parser
         public void Start()
         {
             var pressedKey = Console.ReadKey();
+            var SudokuReader = new SudokuReader();
             Console.WriteLine(pressedKey);
+            SudokuReader.GetSudokuFromFile();
             parseSudoku();
             Console.ReadLine();
         }
