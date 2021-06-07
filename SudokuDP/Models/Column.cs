@@ -4,19 +4,19 @@ using System.Text;
 
 namespace SudokuDP.Models
 {
-    class Row : ICell
+    class Column : ICell
     {
-        public Row(int rowSize): base(0)
+        public Column(int columnSize) : base(0)
         {
-            this.children = new ICell[rowSize];
+            this.children = new ICell[columnSize];
         }
 
         public override bool numberFits(int number)
         {
             bool found = false;
-            foreach(ICell cell in this.children)
+            foreach (ICell cell in this.children)
             {
-                if(cell.number == number)
+                if (cell.number == number)
                 {
                     found = true;
                 }
