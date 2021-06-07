@@ -6,7 +6,8 @@ namespace SudokuDP
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            SudokuReader reader = new SudokuReader();
         }
     }
 }
