@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SudokuDP.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,7 @@ namespace SudokuDP
 {
     class SudokuGame
     {
-
+        private ISudokuBoard board;
 
         public void Start()
         {
