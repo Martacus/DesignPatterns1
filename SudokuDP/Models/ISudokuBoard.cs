@@ -9,5 +9,7 @@ namespace SudokuDP.Models
         public ICell[] Cells { get; set; }
         public ICell[] Rows { get; set; }
         public ICell[] Columns { get; set; }
+
+        public void drawBoard();
     }
 }

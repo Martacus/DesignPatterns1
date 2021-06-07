@@ -36,7 +36,9 @@ namespace SudokuDP.Factory
                 }
             }
 
+            board.drawBoard();
 
+            Console.ReadLine();
 
             throw new NotImplementedException();
         }
