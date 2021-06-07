@@ -5,4 +5,70 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Content\Sudoku\puzzle.4x4" />
+    <None Remove="Content\Sudoku\puzzle.6x6" />
+    <None Remove="Content\Sudoku\puzzle.9x9" />
+    <None Remove="Content\Sudoku\puzzle.jigsaw" />
+    <None Remove="Content\Sudoku\puzzle.samurai" />
+    <None Remove="Content\Sudoku\puzzle2.4x4" />
+    <None Remove="Content\Sudoku\puzzle2.6x6.txt" />
+    <None Remove="Content\Sudoku\puzzle2.9x9.txt" />
+    <None Remove="Content\Sudoku\puzzle2.jigsaw.txt" />
+    <None Remove="Content\Sudoku\puzzle2.samurai.txt" />
+    <None Remove="Content\Sudoku\puzzle3.4x4" />
+    <None Remove="Content\Sudoku\puzzle3.6x6.txt" />
+    <None Remove="Content\Sudoku\puzzle3.9x9.txt" />
+    <None Remove="Content\Sudoku\puzzle3.jigsaw.txt" />
+    <None Remove="Content\Sudoku\puzzle3.samurai.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Content\Sudoku\puzzle.4x4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle.6x6">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle.9x9">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle.jigsaw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle.samurai">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle2.4x4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle2.6x6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle2.9x9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle2.jigsaw.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle2.samurai.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle3.4x4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle3.6x6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle3.9x9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle3.jigsaw.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sudoku\puzzle3.samurai.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
