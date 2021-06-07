@@ -49,11 +49,6 @@ namespace SudokuDP
             }
 
             string[] fileInfo = { fileName, sudoku };
-
-            Console.WriteLine(fileInfo[0]);
-            Console.WriteLine(fileInfo[1]);
-            Console.ReadLine();
-
             return fileInfo;
         }
     }

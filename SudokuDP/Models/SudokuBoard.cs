@@ -6,13 +6,16 @@ namespace SudokuDP.Models
 {
     class SudokuBoard : ISudokuBoard
     {
-        private ICell[] cells;
 
-        public ICell[] Cells { get => cells; set => cells = value; }
+        public ICell[] Cells { get;  set; }
+        public ICell[] Rows { get; set; }
+        public ICell[] Columns { get; set; }
 
         public SudokuBoard(int cellsAmount)
         {
-            this.cells = new ICell[cellsAmount];
+            this.Cells = new ICell[cellsAmount];
         }
+
+       
     }
 }

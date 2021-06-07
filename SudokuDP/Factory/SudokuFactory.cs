@@ -23,10 +23,18 @@ namespace SudokuDP.Factory
             for (int i = 0; i < ints.Length; i++)
             {
                 var cellNumber = Int32.Parse(chars[i].ToString());
-                //board.Cells[i] = new ;
+                board.Cells[i] = new Cell(cellNumber);
             }
 
             int rows = this.SudokuUnparsed.Length / this.columns;
+            for (int i = 0; i < rows; i++)
+            {
+                ICell row = new Row();
+                for (int j = 0; j < 9; j++)
+                {
+                    
+                }
+            }
 
 
 
