@@ -11,7 +11,7 @@ namespace SudokuDP
 
         public void Start()
         {
-
+            board.Run();
         }
 
         #region SINGLETON

@@ -24,6 +24,7 @@ namespace SudokuDP.Parser
             AbstractSudokuFactory factory = getFactory(filename.Split(".")[1], sudoku);
             ISudokuBoard board = factory.GetSudokuBoard();
             SudokuGame.GetGame().board = board;
+            SudokuGame.GetGame().Start();
         }
 
         public AbstractSudokuFactory getFactory(string fileExtension, string sudokuUnparsed)

@@ -24,6 +24,11 @@ namespace SudokuDP.Models
         public void drawBoard()
         {
 
+            for(int i = 0; i<Rows.Length; ++i)
+            {
+                WriteLine(Rows[i].number);
+            }
+
             WriteLine(Rows);
             WriteLine("+-----+-----+-----+");
 
