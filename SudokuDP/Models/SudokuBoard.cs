@@ -18,32 +18,50 @@ namespace SudokuDP.Models
             this.Cells = new ICell[cellsAmount];
             this.Rows = new ICell[size * 2];
             this.Columns = new ICell[size];
-            this.selected = 11;
+            this.selected = 00;
         }
 
         public void drawBoard()
         {
+            int divider;
+            int rest;
+            string wall;
 
-            for(int i = 0; i<Rows.Length; ++i)
+            switch (Columns.Length)
             {
-                WriteLine(Rows[i].number);
+                case 9:
+                case 6:
+                    divider = 3;
+                    rest = 2;
+                    wall = "+-----+-----+-----+";
+                    break;
+                case 4:
+                    divider = 2;
+                    rest = 1;
+                    wall = "+---+---+";
+                    break;
+                default:
+                    divider = 3;
+                    rest = 2;
+                    wall = "+-----+-----+-----+";
+                    break;
             }
 
-            WriteLine(Rows);
-            WriteLine("+-----+-----+-----+");
+            WriteLine(wall);
 
-            for (int i = 1; i < 10; ++i)
+            for (int i = 0; i < Rows.Length/2; ++i)
             {
-                for (int j = 1; j < 10; ++j)
+                for (int j = 0; j < Rows[i].children.Length; ++j)
                 {
                     int newNumber = Convert.ToInt32(string.Format("{0}{1}", i, j));
+                    string num = Rows[i].children[j].number == 0 ? " " : Rows[i].children[j].number.ToString();
                     Write("|");
                     if(newNumber == selected)
                     {
                         ForegroundColor = ConsoleColor.Black;
                         BackgroundColor = ConsoleColor.White;
                     }
-                    Write("0");
+                    Write(num);
                     if (newNumber == selected)
                     {
                         ForegroundColor = ConsoleColor.White;
@@ -52,12 +70,11 @@ namespace SudokuDP.Models
 
                 }
                     
-
                 WriteLine("|");
-                if (i % 3 == 0) WriteLine("+-----+-----+-----+");
+
+                if (i % divider == rest) WriteLine(wall);
             }
         }
-
 
         public void Run()
         {
@@ -72,18 +89,20 @@ namespace SudokuDP.Models
                 ConsoleKeyInfo keyInfo = ReadKey(true);
                 keyPressed = keyInfo.Key;
 
-                if (keyPressed == ConsoleKey.UpArrow)
+                switch (keyPressed)
                 {
-                    selected -= 10;
-                } else if (keyPressed == ConsoleKey.DownArrow)
-                {
-                    selected += 10;
-                } else if (keyPressed == ConsoleKey.RightArrow)
-                {
-                    selected += 1;
-                } else if (keyPressed == ConsoleKey.LeftArrow)
-                {
-                    selected -= 1;
+                    case ConsoleKey.UpArrow:
+                        selected -= 10;
+                        break;
+                    case ConsoleKey.DownArrow:
+                        selected += 10;
+                        break;
+                    case ConsoleKey.RightArrow:
+                        selected += 1;
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        selected -= 1;
+                        break;
                 }
 
             } while (keyPressed != ConsoleKey.Enter);
