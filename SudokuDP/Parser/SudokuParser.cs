@@ -39,7 +39,7 @@ namespace SudokuDP.Parser
                 case "9x9":
                     return new SudokuFactory(9, sudokuUnparsed);
                 case "jigsaw":
-                    return null;
+                    return new JigsawFactory(9, sudokuUnparsed);
                 case "samurai":
                     return null;
             }

@@ -17,5 +17,19 @@ namespace SudokuDP.Models
         }
 
         public abstract bool numberFits(int number);
+
+        public bool addCell(ICell cell)
+        {
+            for (int i = 0; i < this.children.Length; i++)
+            {
+                if (this.children[i] == null)
+                {
+                    this.children[i] = cell;
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }
