@@ -17,13 +17,12 @@ namespace SudokuDP.Factory
         public override ISudokuBoard GetSudokuBoard()
         {
             char[] chars = this.SudokuUnparsed.ToCharArray();
-            int[] ints = new int[chars.Length];
 
             ISudokuBoard board = new SudokuBoard(chars.Length, columns);
-            for (int i = 0; i < ints.Length; i++)
+            for (int i = 0; i < chars.Length; i++)
             {
                 var cellNumber = Int32.Parse(chars[i].ToString());
-                board.Cells[i] = new Cell(cellNumber);
+                board.Cells[i] = new Cell(cellNumber, (i / columns) + 1, (i % columns) + 1);
             }
 
 
@@ -49,18 +48,8 @@ namespace SudokuDP.Factory
 
             Dictionary<int, int[]> offsets = new Dictionary<int, int[]>();
             offsets.Add(9, new int[] { 3, 3, 3 });
-            //0,
-            //27,
-            //54
-            //    81 / 3
             offsets.Add(6, new int[] { 3, 2, 3 });
-            //0, 
-            //12,
-            //24
-            //    36 / 3
             offsets.Add(4, new int[] { 2, 2, 2 });
-            //0, 8, 
-            //16 / 2
 
             board.Columns = new ICell[columns];
             int filledColumns = 0;

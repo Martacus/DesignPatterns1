@@ -8,6 +8,8 @@ namespace SudokuDP.Models
     {
         public ICell[] children;
         public int number { get; set; }
+        public int xCoord { get; set; }
+        public int yCoord { get; set; }
         
         public ICell(int number)
         {

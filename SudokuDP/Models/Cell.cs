@@ -6,9 +6,10 @@ namespace SudokuDP.Models
 {
     class Cell : ICell
     {
-        public Cell(int number): base(number)
+        public Cell(int number, int x, int y): base(number)
         {
-
+            this.xCoord = x;
+            this.yCoord = y;
         }
 
         public override bool numberFits(int number)
