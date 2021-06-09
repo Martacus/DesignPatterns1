@@ -71,7 +71,7 @@ namespace SudokuDP.Factory
                 }
             }
 
-            board.drawBoard();
+            board.Run();
 
             Console.ReadLine();
 

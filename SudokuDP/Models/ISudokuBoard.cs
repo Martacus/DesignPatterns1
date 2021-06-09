@@ -11,5 +11,6 @@ namespace SudokuDP.Models
         public ICell[] Columns { get; set; }
 
         public void drawBoard();
+        public void Run();
     }
 }
