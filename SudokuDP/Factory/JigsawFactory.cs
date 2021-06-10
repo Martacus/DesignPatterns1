@@ -37,6 +37,11 @@ namespace SudokuDP.Factory
                 cells[columnNummer].addCell(cell);
             }
 
+            for (int i = 0; i < cells.Count; i++)
+            {
+                board.Columns[i] = cells[i];
+            }
+
 
             for (int i = 0; i < columns; i++)
             {

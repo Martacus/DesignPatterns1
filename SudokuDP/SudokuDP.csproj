@@ -12,12 +12,10 @@
     <None Remove="Content\Sudoku\puzzle.jigsaw" />
     <None Remove="Content\Sudoku\puzzle.samurai" />
     <None Remove="Content\Sudoku\puzzle2.4x4" />
-    <None Remove="Content\Sudoku\puzzle2.6x6.txt" />
     <None Remove="Content\Sudoku\puzzle2.9x9.txt" />
     <None Remove="Content\Sudoku\puzzle2.jigsaw.txt" />
     <None Remove="Content\Sudoku\puzzle2.samurai.txt" />
     <None Remove="Content\Sudoku\puzzle3.4x4" />
-    <None Remove="Content\Sudoku\puzzle3.6x6.txt" />
     <None Remove="Content\Sudoku\puzzle3.9x9.txt" />
     <None Remove="Content\Sudoku\puzzle3.jigsaw.txt" />
     <None Remove="Content\Sudoku\puzzle3.samurai.txt" />
@@ -42,9 +40,6 @@
     <Content Include="Content\Sudoku\puzzle2.4x4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sudoku\puzzle2.6x6.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Sudoku\puzzle2.9x9.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -55,9 +50,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sudoku\puzzle3.4x4">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sudoku\puzzle3.6x6.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sudoku\puzzle3.9x9.txt">
