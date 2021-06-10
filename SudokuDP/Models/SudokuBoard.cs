@@ -11,14 +11,16 @@ namespace SudokuDP.Models
         public ICell[] Cells { get;  set; }
         public ICell[] Rows { get; set; }
         public ICell[] Columns { get; set; }
-        public int selected { get; set; }
+        public int xCoord { get; set; }
+        public int yCoord { get; set; }
 
         public SudokuBoard(int cellsAmount, int size)
         {
             this.Cells = new ICell[cellsAmount];
             this.Rows = new ICell[size * 2];
             this.Columns = new ICell[size];
-            this.selected = 00;
+            this.xCoord = 0;
+            this.yCoord = 0;
         }
 
         public void drawBoard()
@@ -53,16 +55,15 @@ namespace SudokuDP.Models
             {
                 for (int j = 0; j < Rows[i].children.Length; ++j)
                 {
-                    int newNumber = Convert.ToInt32(string.Format("{0}{1}", i, j));
                     string num = Rows[i].children[j].number == 0 ? " " : Rows[i].children[j].number.ToString();
                     Write("|");
-                    if(newNumber == selected)
+                    if(i == xCoord && j == yCoord)
                     {
                         ForegroundColor = ConsoleColor.Black;
                         BackgroundColor = ConsoleColor.White;
                     }
                     Write(num);
-                    if (newNumber == selected)
+                    if (i == xCoord && j == yCoord)
                     {
                         ForegroundColor = ConsoleColor.White;
                         BackgroundColor = ConsoleColor.Black;
@@ -74,6 +75,12 @@ namespace SudokuDP.Models
 
                 if (i % divider == rest) WriteLine(wall);
             }
+
+            WriteLine("Space = Change mode:");
+            WriteLine("ArrowKeys = Move;");
+            WriteLine("S = Solve;");
+            WriteLine("C = Check;");
+            WriteLine("NumberKeys = Put in number;");
         }
 
         public void Run()
@@ -92,16 +99,16 @@ namespace SudokuDP.Models
                 switch (keyPressed)
                 {
                     case ConsoleKey.UpArrow:
-                        selected -= 10;
+                        if (xCoord != 0) xCoord -= 1;
                         break;
                     case ConsoleKey.DownArrow:
-                        selected += 10;
+                        if (xCoord != Columns.Length - 1) xCoord += 1;
                         break;
                     case ConsoleKey.RightArrow:
-                        selected += 1;
+                        if (yCoord != Columns.Length-1) yCoord += 1;
                         break;
                     case ConsoleKey.LeftArrow:
-                        selected -= 1;
+                        if (yCoord != 0) yCoord -= 1;
                         break;
                 }
 
