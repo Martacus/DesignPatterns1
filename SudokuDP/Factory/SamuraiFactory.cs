@@ -63,7 +63,7 @@ namespace SudokuDP.Factory
                 for (int j = 0; j < offsetTwo; j++)
                 {
 
-                    ICell column = new Column(columns);
+                    ICell column = new Cluster(columns);
                     for (int k = 0; k < offsetTwo; k++)
                     {
                         for (int p = 0; p < offsetTwo; p++)

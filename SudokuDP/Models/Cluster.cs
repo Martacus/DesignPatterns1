@@ -4,11 +4,11 @@ using System.Text;
 
 namespace SudokuDP.Models
 {
-    class Row : ICell
+    class Cluster : ICell
     {
-        public Row(int rowSize): base(0)
+        public Cluster(int columnSize) : base(0)
         {
-            this.children = new ICell[rowSize];
+            this.children = new ICell[columnSize];
         }
 
         public override bool numberFits(int x, int y)

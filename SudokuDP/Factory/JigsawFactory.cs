@@ -22,7 +22,7 @@ namespace SudokuDP.Factory
             Dictionary<int, ICell> cells = new Dictionary<int, ICell>();
             for (int i = 0; i < columns; i++)
             {
-                cells.Add(i, new Column(columns));
+                cells.Add(i, new Cluster(columns));
             }
 
             for (int i = 0; i < field.Length; i++)

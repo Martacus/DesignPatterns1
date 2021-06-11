@@ -18,7 +18,31 @@ namespace SudokuDP.Models
             this.number = number;
         }
 
-        public abstract bool numberFits(int number);
+        public ICell getCell(int x, int y)
+        {
+            foreach (ICell cell in this.children)
+            {
+                if (cell.xCoord == x && cell.yCoord == y)
+                {
+                    return cell;
+                }
+            }
+            return null;
+        }
+
+        public abstract bool numberFits(int x, int y);
+
+        public bool hasCell(int x, int y)
+        {
+            foreach (ICell cell in this.children)
+            {
+                if (cell.xCoord == x && cell.yCoord == y)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
         public bool addCell(ICell cell)
         {

@@ -12,5 +12,7 @@ namespace SudokuDP.Models
 
         public void drawBoard();
         public void Run();
+        public bool solve();
+        public bool valid(ICell cell);
     }
 }
