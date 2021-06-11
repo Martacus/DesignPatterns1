@@ -23,6 +23,7 @@ namespace SudokuDP.Factory
             {
                 var cellNumber = Int32.Parse(chars[i].ToString());
                 board.Cells[i] = new Cell(cellNumber, (i / columns) + 1, (i % columns) + 1);
+                if (board.Cells[i].number > 0) board.Cells[i].isPermanent = true;
             }
 
 

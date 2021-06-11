@@ -6,8 +6,10 @@ namespace SudokuDP.States
 {
     public interface IGameStateContext
     {
+        public string CurrentState { get; set; }
+
         void SetState(IGameState newState);
 
-        void ReportLog(string key);
+        void SetCurrentState(string key);
     }
 }

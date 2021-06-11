@@ -10,7 +10,9 @@ namespace SudokuDP.Models
         public int number { get; set; }
         public int xCoord { get; set; }
         public int yCoord { get; set; }
-        
+        public bool isPermanent { get; set; }
+        public bool IsHelper { get; set; }
+
         public ICell(int number)
         {
             this.number = number;

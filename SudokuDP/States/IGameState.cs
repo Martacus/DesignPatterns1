@@ -6,7 +6,6 @@ namespace SudokuDP.States
 {
     public interface IGameState
     {
-
         void RegisterInput(ConsoleKey key);
     }
 }

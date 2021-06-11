@@ -7,13 +7,11 @@ namespace SudokuDP.States
 
         public HelpState(IGameStateContext context) : base(context)
         {
-          
+            Context.SetCurrentState("HelpState");
         }
 
         public override void RegisterInput(ConsoleKey key)
         {
-            Context.ReportLog("HelpState");
-
             if (key == ConsoleKey.Spacebar)
             {
                 Context.SetState(new PlayState(Context));
