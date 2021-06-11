@@ -65,11 +65,11 @@ namespace SudokuDP.Factory
                 {
                     
                     ICell column = new Column(columns);
-                    for (int k = 0; k < offsetThree; k++)
+                    for (int k = 0; k < offsetTwo; k++)
                     {
-                        for (int p = 0; p < offsetThree; p++)
+                        for (int p = 0; p < offsetTwo; p++)
                         {
-                            column.children[k * offsetThree + p] = board.Cells[p + (k * columns) + columnOffset + columnRowOffset];
+                            column.children[k * offsetTwo + p] = board.Cells[p + (k * columns) + columnOffset + columnRowOffset];
                         }
                     }
                     columnOffset = columnOffset + offsetOne;
