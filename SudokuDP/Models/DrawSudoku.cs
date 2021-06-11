@@ -16,13 +16,12 @@ namespace SudokuDP.Models
         {
             if (cell.isPermanent)
             {
-                ForegroundColor = ConsoleColor.Red;
-                BackgroundColor = ConsoleColor.Yellow;
+                ForegroundColor = ConsoleColor.Green;
             }
 
             if (cell.IsHelper)
             {
-                ForegroundColor = ConsoleColor.Red;
+                ForegroundColor = ConsoleColor.Black;
                 BackgroundColor = ConsoleColor.Yellow;
             }
 
