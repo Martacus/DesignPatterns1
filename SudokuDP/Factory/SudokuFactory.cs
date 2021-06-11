@@ -33,6 +33,8 @@ namespace SudokuDP.Factory
                 for (int j = 0; j < columns; j++)
                 {
                     row.children[j] = board.Cells[(i * columns) + j];
+                    row.children[j].xCoord = i;
+                    row.children[j].yCoord = j;
                 }
                 board.Rows[i] = row;
             }

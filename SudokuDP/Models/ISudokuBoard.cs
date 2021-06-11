@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SudokuDP.States;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,8 +10,9 @@ namespace SudokuDP.Models
         public ICell[] Cells { get; set; }
         public ICell[] Rows { get; set; }
         public ICell[] Columns { get; set; }
+        public int xCoord { get; set; }
+        public int yCoord { get; set; }
 
-        public void drawBoard();
-        public void Run();
+        public void drawBoard(string CurrentState);
     }
 }
