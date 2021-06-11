@@ -4,9 +4,9 @@ using System.Text;
 
 namespace SudokuDP.Models
 {
-    class Column : ICell
+    class Cluster : ICell
     {
-        public Column(int columnSize) : base(0)
+        public Cluster(int columnSize) : base(0)
         {
             this.children = new ICell[columnSize];
         }

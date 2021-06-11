@@ -85,6 +85,75 @@ namespace SudokuDP.Models
             WriteLine("C            = Check;");
             WriteLine("NumberKeys   = Put in number;");
         }
-        
+
+
+        public bool solve()
+        {
+            var cell = firstEmptyCell();
+            if (cell != null)
+            {
+                for (int i = 1; i < 10; i++)
+                {
+                    if (valid(cell, i))
+                    {
+                        cell.number = i;
+                        if (solve())
+                        {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool valid(ICell cell, int number)
+        {
+            var x = cell.xCoord;
+            var y = cell.yCoord;
+            List<ICell> cells = new List<ICell>();
+            foreach (ICell cellRow in this.Rows)
+            {
+                if (cellRow.hasCell(x, y))
+                {
+                    cells.Add(cellRow);
+                }
+            }
+
+            foreach (ICell cluster in this.Columns)
+            {
+                if (cluster.hasCell(x, y))
+                {
+                    cells.Add(cluster);
+                }
+            }
+
+            foreach (ICell cluster in cells)
+            {
+                if (!cluster.numberFits(number))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public ICell firstEmptyCell()
+        {
+            foreach(ICell cell in this.Cells)
+            {
+                if (cell.number == 0) {
+                    return cell;
+                }
+            }
+            return null;
+        }
+
+
     }
 }

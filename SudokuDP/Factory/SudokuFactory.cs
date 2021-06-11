@@ -66,12 +66,12 @@ namespace SudokuDP.Factory
                 for (int j = 0; j < offsetTwo; j++)
                 {
                     
-                    ICell column = new Column(columns);
-                    for (int k = 0; k < offsetThree; k++)
+                    ICell column = new Cluster(columns);
+                    for (int k = 0; k < offsetTwo; k++)
                     {
-                        for (int p = 0; p < offsetThree; p++)
+                        for (int p = 0; p < offsetTwo; p++)
                         {
-                            column.children[k * offsetThree + p] = board.Cells[p + (k * columns) + columnOffset + columnRowOffset];
+                            column.children[k * offsetTwo + p] = board.Cells[p + (k * columns) + columnOffset + columnRowOffset];
                         }
                     }
                     columnOffset = columnOffset + offsetOne;
@@ -79,6 +79,14 @@ namespace SudokuDP.Factory
                     filledColumns++;
                 }
                 columnRowOffset += board.Cells.Length / offsetOne;
+            }
+
+            try
+            {
+                board.solve();
+            } catch(Exception e)
+            {
+                var s = 0;
             }
 
             return board;

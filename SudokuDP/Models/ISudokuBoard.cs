@@ -14,5 +14,7 @@ namespace SudokuDP.Models
         public int yCoord { get; set; }
 
         public void drawBoard(string CurrentState);
+        public bool solve();
+        public bool valid(ICell cell, int number);
     }
 }
