@@ -19,7 +19,7 @@ namespace SudokuDP.Models
                 ForegroundColor = ConsoleColor.Green;
             }
 
-            if (cell.IsHelper)
+            if (cell.IsHelper && cell.number > 0)
             {
                 ForegroundColor = ConsoleColor.Black;
                 BackgroundColor = ConsoleColor.Yellow;

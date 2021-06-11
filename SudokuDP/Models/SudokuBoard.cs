@@ -63,11 +63,21 @@ namespace SudokuDP.Models
                     {
                         ForegroundColor = ConsoleColor.Green;
                     }
+                    if (Rows[i].children[j].IsHelper && !string.IsNullOrWhiteSpace(num))
+                    {
+                        ForegroundColor = ConsoleColor.Black;
+                        BackgroundColor = ConsoleColor.Yellow;
+                    }
+                    if (Rows[i].children[j].IsValid && !Rows[i].children[j].IsHelper)
+                    {
+                        BackgroundColor = ConsoleColor.Green;
+                    }
                     if (i == xCoord && j == yCoord)
                     {
                         ForegroundColor = ConsoleColor.Black;
                         BackgroundColor = ConsoleColor.White;
                     }
+                    
                     Write(num);
                    
                     ForegroundColor = ConsoleColor.White;
@@ -112,6 +122,11 @@ namespace SudokuDP.Models
             }
         }
 
+        public void check()
+        {
+           
+        }
+
         public bool valid(ICell cell, int number)
         {
             var x = cell.xCoord;
@@ -154,7 +169,5 @@ namespace SudokuDP.Models
             }
             return null;
         }
-
-
     }
 }

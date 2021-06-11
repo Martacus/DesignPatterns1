@@ -16,5 +16,6 @@ namespace SudokuDP.Models
         public void drawBoard(string CurrentState);
         public bool solve();
         public bool valid(ICell cell, int number);
+        public void check();
     }
 }

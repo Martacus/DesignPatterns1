@@ -12,6 +12,7 @@ namespace SudokuDP.Models
         public int yCoord { get; set; }
         public bool isPermanent { get; set; }
         public bool IsHelper { get; set; }
+        public bool IsValid { get; set; }
 
         public ICell(int number)
         {
