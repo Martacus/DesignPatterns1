@@ -101,6 +101,7 @@ namespace SudokuDP.Models
                         {
                             return true;
                         }
+                        cell.number = 0;
                     }
                 }
                 return false;
