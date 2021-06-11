@@ -179,24 +179,24 @@ namespace SudokuDP.Models
             {
                 for (int i = 1; i < 10; i++)
                 {
-                    cell.number = i;
-                    if (valid(cell))
+                    if (valid(cell, i))
                     {
+                        cell.number = i;
                         if (solve())
                         {
                             return true;
                         }
                     }
                 }
+                return false;
             }
             else
             {
                 return true;
             }
-            return false;
         }
 
-        public bool valid(ICell cell)
+        public bool valid(ICell cell, int number)
         {
             var x = cell.xCoord;
             var y = cell.yCoord;
@@ -219,7 +219,7 @@ namespace SudokuDP.Models
 
             foreach (ICell cluster in cells)
             {
-                if (!cluster.numberFits(x, y))
+                if (!cluster.numberFits(number))
                 {
                     return false;
                 }

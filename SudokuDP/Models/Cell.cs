@@ -12,9 +12,9 @@ namespace SudokuDP.Models
             this.yCoord = y;
         }
 
-        public override bool numberFits(int x, int y)
+        public override bool numberFits(int number)
         {
-            return true;
+            return number == 0;
         }
     }
 }

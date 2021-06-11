@@ -11,24 +11,18 @@ namespace SudokuDP.Models
             this.children = new ICell[rowSize];
         }
 
-        public override bool numberFits(int x, int y)
+        public override bool numberFits(int number)
         {
-            var checkCell = getCell(x, y);
-            List<ICell> foundCells = new List<ICell>();
-            foreach (ICell cell in this.children)
+            bool found = false;
+            foreach(ICell cell in this.children)
             {
-                if (cell.number == checkCell.number)
+                if(cell.number == number)
                 {
-                    foundCells.Add(cell);
+                    found = true;
                 }
             }
 
-            if (foundCells.Count > 1)
-            {
-                return false;
-            }
-
-            return true;
+            return !found;
         }
     }
 }

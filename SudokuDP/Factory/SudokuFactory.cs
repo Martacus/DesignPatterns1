@@ -79,7 +79,13 @@ namespace SudokuDP.Factory
                 columnRowOffset += board.Cells.Length / offsetOne;
             }
 
-            board.solve();
+            try
+            {
+                board.solve();
+            } catch(Exception e)
+            {
+                var s = 0;
+            }
 
             return board;
 

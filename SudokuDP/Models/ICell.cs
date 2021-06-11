@@ -30,7 +30,7 @@ namespace SudokuDP.Models
             return null;
         }
 
-        public abstract bool numberFits(int x, int y);
+        public abstract bool numberFits(int number);
 
         public bool hasCell(int x, int y)
         {
