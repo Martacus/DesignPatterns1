@@ -67,9 +67,10 @@ namespace SudokuDP.Factory
                     ICell column = new Cluster(columns);
                     for (int k = 0; k < offsetTwo; k++)
                     {
-                        for (int p = 0; p < offsetTwo; p++)
+                        for (int p = 0; p < offsetThree; p++)
                         {
-                            column.children[k * offsetTwo + p] = board.Cells[p + (k * columns) + columnOffset + columnRowOffset];
+                            Console.WriteLine(k * offsetTwo + p);
+                            column.children[k * offsetThree + p] = board.Cells[p + (k * columns) + columnOffset + columnRowOffset];
                         }
                     }
                     columnOffset = columnOffset + offsetOne;
