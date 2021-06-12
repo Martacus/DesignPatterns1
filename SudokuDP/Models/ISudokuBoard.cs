@@ -17,5 +17,6 @@ namespace SudokuDP.Models
         public bool solve();
         public bool valid(ICell cell, int number);
         public void check();
+        public ISudokuBoard copy();
     }
 }

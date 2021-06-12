@@ -65,37 +65,9 @@ namespace SudokuDP
                     case ConsoleKey.D7:
                     case ConsoleKey.D8:
                     case ConsoleKey.D9:
+                        if (cell.isPermanent) break;
 
-                        if (cell.isPermanent)
-                        {
-                            break;
-                        }
-
-                        switch (CurrentState)
-                        {
-                            case "HelpState":
-                                if (cell.number == (int)Char.GetNumericValue(keyInfo.KeyChar) && cell.IsHelper)
-                                {
-                                    cell.number = 0;
-                                }
-                                else if (cell.IsHelper || cell.number == 0)
-                                {
-                                    cell.number = (int)Char.GetNumericValue(keyInfo.KeyChar);
-                                    cell.IsHelper = true;
-                                }
-                                break;
-                            case "PlayState":
-                                if (cell.number == (int)Char.GetNumericValue(keyInfo.KeyChar))
-                                {
-                                    cell.number = 0;
-                                }
-                                else
-                                {
-                                    cell.number = (int)Char.GetNumericValue(keyInfo.KeyChar);
-                                    cell.IsHelper = false;
-                                }
-                                break;
-                        }
+                        State.CellInput(cell, keyInfo.KeyChar);
                         break;
                 }
 

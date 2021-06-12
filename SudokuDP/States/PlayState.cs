@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SudokuDP.Models;
+using System;
 
 namespace SudokuDP.States
 {
@@ -12,10 +13,19 @@ namespace SudokuDP.States
 
         public override void RegisterInput(ConsoleKey key)
         {
+            Context.SetState(new HelpState(Context));
+        }
 
-            if (key == ConsoleKey.Spacebar)
+        public override void CellInput(ICell cell, char keychar)
+        {
+            if (cell.number == (int)Char.GetNumericValue(keychar))
             {
-                Context.SetState(new HelpState(Context));
+                cell.number = 0;
+            }
+            else
+            {
+                cell.number = (int)Char.GetNumericValue(keychar);
+                cell.IsHelper = false;
             }
         }
     }

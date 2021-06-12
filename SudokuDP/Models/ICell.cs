@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SudokuDP.Models
 {
-    abstract class ICell
+    public abstract class ICell
     {
         public ICell[] children;
         public int number { get; set; }

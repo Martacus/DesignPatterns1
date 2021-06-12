@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SudokuDP.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,6 +14,11 @@ namespace SudokuDP.States
         }
 
         public IGameStateContext Context { get; }
+
+        public virtual void CellInput(ICell cell, char keychar)
+        {
+            throw new NotImplementedException();
+        }
 
         public virtual void RegisterInput(ConsoleKey key)
         {
