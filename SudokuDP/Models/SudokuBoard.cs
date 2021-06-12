@@ -14,7 +14,7 @@ namespace SudokuDP.Models
         public ICell[] Columns { get; set; }
         public int xCoord { get; set; }
         public int yCoord { get; set; }
-        public SudokuBoard solvedBoard { get; set; }
+        public ISudokuBoard solvedBoard { get; set; }
 
         public SudokuBoard(int cellsAmount, int size)
         {
@@ -108,11 +108,13 @@ namespace SudokuDP.Models
                     if (valid(cell, i))
                     {
                         cell.number = i;
+                        cell.isPermanent = true;
                         if (solve())
                         {
                             return true;
                         }
                         cell.number = 0;
+                        cell.isPermanent = false;
                     }
                 }
                 return false;
@@ -164,19 +166,12 @@ namespace SudokuDP.Models
         {
             foreach(ICell cell in this.Cells)
             {
-                if (!cell.isPermanent) {
+                if (!cell.isPermanent || cell.number == 0) {
                     return cell;
                 }
             }
             return null;
         }
 
-        public void copy()
-        {
-            return new SudokuBoard(Cells.Length, Columns.Length)
-            {
-                
-            };
-        }
     }
 }

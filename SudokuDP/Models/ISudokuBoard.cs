@@ -12,11 +12,11 @@ namespace SudokuDP.Models
         public ICell[] Columns { get; set; }
         public int xCoord { get; set; }
         public int yCoord { get; set; }
+        public ISudokuBoard solvedBoard { get; set; }
 
         public void drawBoard(string CurrentState);
         public bool solve();
         public bool valid(ICell cell, int number);
         public void check();
-        public ISudokuBoard copy();
     }
 }

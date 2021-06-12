@@ -14,9 +14,25 @@ namespace SudokuDP.Factory
 
         public override ISudokuBoard GetSudokuBoard()
         {
-            var strippedSudoku = this.SudokuUnparsed.Split("SumoCueV1=")[1];
-            string[] field = strippedSudoku.Split("=");
+            var field = this.SudokuUnparsed.Split("SumoCueV1=")[1].Split("=");
             ISudokuBoard board = new SudokuBoard(field.Length, columns);
+            ISudokuBoard solvedBoard = new SudokuBoard(field.Length, columns);
+
+            setCells(field, board);
+            setCells(field, solvedBoard);
+            setRows(board);
+            setRows(solvedBoard);
+
+            solvedBoard.solve();
+            board.solvedBoard = solvedBoard;
+
+            return board;
+
+        }
+
+        public void setCells(string[] field, ISudokuBoard board)
+        {
+
             Dictionary<int, ICell> cells = new Dictionary<int, ICell>();
             for (int i = 0; i < columns; i++)
             {
@@ -37,17 +53,7 @@ namespace SudokuDP.Factory
             {
                 board.Columns[i] = cells[i];
             }
-
-            setRows(board);
-
-            return board;
-
         }
-
-
-
-
-
 
     }
 }
