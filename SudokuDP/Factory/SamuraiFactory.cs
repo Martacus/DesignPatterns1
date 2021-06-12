@@ -7,11 +7,9 @@ namespace SudokuDP.Factory
 {
     class SamuraiFactory : AbstractSudokuFactory
     {
-        private int columns { get; set; }
 
-        public SamuraiFactory(int columns, string sudokuUnparsed) : base(sudokuUnparsed)
+        public SamuraiFactory(int columns, string sudokuUnparsed) : base(columns, sudokuUnparsed)
         {
-            this.columns = columns;
         }
 
         public override ISudokuBoard GetSudokuBoard()

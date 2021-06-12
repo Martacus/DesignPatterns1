@@ -7,11 +7,9 @@ namespace SudokuDP.Factory
 {
     class SudokuFactory : AbstractSudokuFactory
     {
-        private int columns { get; set; }
 
-        public SudokuFactory(int columns, string sudokuUnparsed) : base(sudokuUnparsed)
+        public SudokuFactory(int columns, string sudokuUnparsed) : base(columns, sudokuUnparsed)
         {
-            this.columns = columns;
         }
 
         public override ISudokuBoard GetSudokuBoard()
@@ -27,25 +25,7 @@ namespace SudokuDP.Factory
             }
 
 
-            for (int i = 0; i < columns; i++)
-            {
-                ICell row = new Row(columns);
-                for (int j = 0; j < columns; j++)
-                {
-                    row.children[j] = board.Cells[(i * columns) + j];
-                }
-                board.Rows[i] = row;
-            }
-
-            for (int i = 0; i < columns; i++)
-            {
-                ICell row = new Row(columns);
-                for (int j = 0; j < columns; j++)
-                {
-                    row.children[j] = board.Cells[(j * columns) + i];
-                }
-                board.Rows[columns + i] = row;
-            }
+            setRows(board);
 
             Dictionary<int, int[]> offsets = new Dictionary<int, int[]>();
             offsets.Add(9, new int[] { 3, 3, 3 });
